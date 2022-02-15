@@ -1,15 +1,14 @@
 users:
-  - name: liquibase
-    password: $POSTGRESQL_LIQUIBASE_PASSWORD
+  - name: springboot_web
+    password: $POSTGRES_SPRINGBOOTWEB_PASSWORD
     role: superuser
 databases:
-  - name: liquibase
-    owner: liquibase
+  - name: springboot_web
+    owner: springboot_web
     tablespace:
       - name: tb1
         location: /appz/data/tb1
     schemas:
       - name: schema1
-        authorised_user: liquibase
+        authorised_user: springboot_web
         search_path: true
-  
