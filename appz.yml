@@ -41,7 +41,7 @@ properties:
     DAV_FOLDER: /dumps
     DAV_USER: appz
     DAV_USERPASSWORD: 
-    VAULT:DAV_USERPASSWORD
+      vault: DAV_USERPASSWORD
     PGPASSWORD: 
       vault: PGPASSWORD
     revision : 80
