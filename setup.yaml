@@ -15,9 +15,9 @@ databases:
 restore:
   - database: accounts
     source:
-       url: 'https://minnaniju-dev-webdav-2-0.038c839d.lowtouch.cloud/dumps'
+       url: https://minnaniju-dev-webdav-2-0.038c839d.lowtouch.cloud/dumps/accountsdb-springboot.sql
        user: appz
        password: $DAV_USERPASSWORD
     user: postgres
     password: $POSTGRES_PASSWORD # password of the 'user' above.
-    token: 20220217-0645
+    token: 20220217-0736
