@@ -1,22 +1,24 @@
+```
 users:
-  - name: springbootweb
+  - name: springboot
     password: $POSTGRES_SPRINGBOOTWEB_PASSWORD
     role: superuser
 databases:
-  - name: springbootweb
-    owner: springbootweb
+  - name: springboot
+    owner: springboot
     tablespace:
       - name: tb1
         location: /appz/data/tb1
     schemas:
       - name: schema1
-        authorised_user: springbootweb
+        authorised_user: springboot
         search_path: true
-   
 restore:
-  - database: springbootweb
+  - database: accounts
     source:
-      url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/06/accountsdb-springboot.sql_.zip'
-    user: springbootweb
-    password: $POSTGRES_SPRINGBOOTWEB_PASSWORD
-    token: 20220216-0743
+       url: 'https://minnaniju-dev-webdav-2-0.038c839d.lowtouch.cloud/dumps'
+       user: appz
+       password: $DAV_USERPASSWORD
+    user: postgres
+    password: $POSTGRES_PASSWORD # password of the 'user' above.
+```
