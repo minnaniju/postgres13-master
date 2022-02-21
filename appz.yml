@@ -1,7 +1,7 @@
 app:
     name: Postgres Master
     code: POSTGRES
-    notify: mniju@ecloudcontrol.com
+    notify: minnaniju@ecloudcontrol.com
     
 build:
     version: 13.X
@@ -38,17 +38,18 @@ properties:
     POSTGRESQL_SYNCHRONOUS_COMMIT_MODE: on
     POSTGRESQL_NUM_SYNCHRONOUS_REPLICAS: 1
     POSTGRESQL_REP_USER: replica
-    POSTGRES_SPRINGBOOTWEB_PASSWORD:
-      vault: POSTGRES_SPRINGBOOTWEB_PASSWORD 
-    POSTGRESQL_DOTNET_PASSWORD: 
+    POSTGRESQL_SPRINGBOOTWEB_PASSWORD:
+          vault: POSTGRESQL_SPRINGBOOTWEB_PASSWORD
+    POSTGRESQL_DOTNET_PASSWORD:
       vault: POSTGRESQL_DOTNET_PASSWORD
-    PUSH_BACKUP_WEBDAV: True
-    DAV_FOLDER: /dumps
-    DAV_USER: appz
-    DAV_USERPASSWORD: 
-      vault: DAV_USERPASSWORD
     PGPASSWORD: 
       vault: PGPASSWORD
-    revision : 96
+    revision : 78
 
-   
+    #WebDav Setup
+    PUSH_BACKUP_WEBDAV: False
+    DAV_FOLDER: DBBACKUP
+    DAV_USER: appz
+    DAV_USERPASSWORD:
+      vault: DAV_USERPASSWORD
+    WEBDAV_BACKUP_URL: http://webdav-2-0/
