@@ -1,23 +1,34 @@
 users:
-  - name: springboot
-    password: $POSTGRES_SPRINGBOOTWEB_PASSWORD
+  - name: springbootweb
+    password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
+    role: superuser
+  - name: dotnet
+    password: $POSTGRESQL_DOTNET_PASSWORD
     role: superuser
 databases:
-  - name: springboot
-    owner: springboot
+  - name: springbootweb
+    owner: springbootweb
     tablespace:
       - name: tb1
         location: /appz/data/tb1
     schemas:
       - name: schema1
-        authorised_user: springboot
+        authorised_user: springbootweb
         search_path: true
+  - name: dotnet
+    owner: dotnet
+    tablespace:
+      - name: tb2
+        location: /appz/data/tb2
+    schemas:
+      - name: schema2
+        authorised_user: dotnet
+        search_path: true
+   
 restore:
-  - database: accounts
+  - database: springbootweb
     source:
-       url: https://minnaniju-dev-webdav-2-0.038c839d.lowtouch.cloud/dumps/accountsdb-springboot.sql
-       user: appz
-       password: $DAV_USERPASSWORD
-    user: postgres
-    password: $POSTGRES_PASSWORD # password of the 'user' above.
-    token: 20220221-0630
+      url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/06/accountsdb-springboot.sql_.zip'
+    user: springbootweb
+    password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
+    token: 20220221-0641
