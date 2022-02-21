@@ -20,4 +20,4 @@ restore:
        password: $DAV_USERPASSWORD
     user: postgres
     password: $POSTGRES_PASSWORD # password of the 'user' above.
-    token: 20220221-0609
+    token: 20220221-0630
