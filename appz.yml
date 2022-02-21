@@ -1,7 +1,7 @@
 app:
     name: Postgres Master
     code: POSTGRES
-    notify: minnaniju@ecloudcontrol.com
+    notify: mniju@ecloudcontrol.com
     
 build:
     version: 13.X
