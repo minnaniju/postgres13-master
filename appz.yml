@@ -45,4 +45,4 @@ properties:
     POSTGRESQL_SPRINGBOOTWEB_PASSWORD:
       vault: POSTGRESQL_SPRINGBOOTWEB_PASSWORD
     
-    revision : 92
+    revision : 93
